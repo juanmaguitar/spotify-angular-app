@@ -1,5 +1,6 @@
 angular.module("mySpotifyAppServices")
 	.factory('spotifyService', function ($http) {
+
 		var urlSearch = 'https://api.spotify.com/v1/search?type=artist&query=<VALUE>'
 		var urlAlbums = 'https://api.spotify.com/v1/artists/<ID-ARTIST>/albums'
 		var urlTracks = 'https://api.spotify.com/v1/albums/<ID-ALBUM>/tracks'

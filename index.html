@@ -13,46 +13,18 @@
 
 </head>
 <body>
+
 	<div class="container">
 
-		<form ng-submit="submit()" ng-controller="searchBox">
-			<fieldset>
-				<legend>Search </legend>
+		<h1>Spotify App</h1>
 
-				<div class="input-group">
-		      <input type="text" class="form-control" ng-model="searchValue" placeholder="Search for artists...">
-		      <span class="input-group-btn">
-		        <button class="btn btn-default" type="button">Search!</button>
-		      </span>
-		    </div><!-- /input-group -->
-			</fieldset>
-		</form>
+		<div ng-include src="'templates/search.html'"></div>
 
 		<form action="">
 
-			<fieldset ng-controller="artistsController">
-				<legend>Artists</legend>
-				<select name="" id="" ng-change="artistSelected()" ng-model="artist" class="form-control">
-					<option value="{{ artist.id }}" ng-repeat="artist in artists">{{ artist.name }}</option>
-				</select>
-			</fieldset>
-
-			<fieldset ng-controller="albumsController">
-				<legend>Artists</legend>
-				<select name="" id="" ng-change="albumSelected()" ng-model="album" class="form-control">
-					<option value="{{ album.id }}" ng-repeat="album in albums">{{ album.name }}</option>
-				</select>
-			</fieldset>
-
-			<fieldset ng-controller="tracksController">
-				<legend>Tracks</legend>
-				<ul>
-					<li ng-repeat="track in tracks">
-						<a href="{{track.preview_url}}" target="_blank">{{ track.name }}</a>
-					</li>
-				</ul>
-			</fieldset>
-
+		  <div ng-include src="'templates/artists.html'"></div>
+		  <div ng-include src="'templates/albums.html'"></div>
+		  <div ng-include src="'templates/tracks.html'"></div>
 
 		</form>
 

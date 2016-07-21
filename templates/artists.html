@@ -1,0 +1,6 @@
+<fieldset ng-controller="artistsController">
+	<legend>Artists</legend>
+	<select name="" id="" ng-change="artistSelected()" ng-model="artist" class="form-control">
+		<option value="{{ artist.id }}" ng-repeat="artist in artists">{{ artist.name }}</option>
+	</select>
+</fieldset>
