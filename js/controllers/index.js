@@ -4,7 +4,7 @@ angular.module("mySpotifyAppControllers",[ 'mySpotifyAppServices' ])
 		$scope.submit = function() {
 			spotifyService.getArtists( $scope.searchValue )
 				.then(function( dataFromApi ) {
-					$scope.artists = dataFromApi.data.artists.items;
+					$rootScope.artists = dataFromApi.data.artists.items;
 				})
 		}
 

@@ -4,7 +4,7 @@ angular.module("mySpotifyAppControllers")
 			$scope.albumSelected = function() {
 				spotifyService.getTracks($scope.album)
 					.then(function( dataFromApi ) {
-						$scope.$parent.$parent.tracks = dataFromApi.data.items;
+						$rootScope.tracks = dataFromApi.data.items;
 					})
 			}
 
