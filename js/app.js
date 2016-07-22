@@ -1,1 +1,1 @@
-angular.module("mySpotifyApp",[ 'mySpotifyAppControllers' ])
+angular.module("mySpotifyApp",[ 'mySpotifyAppComponents' ])

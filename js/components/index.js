@@ -1,4 +1,5 @@
-angular.module("mySpotifyAppControllers",[ 'mySpotifyAppServices' ])
+angular.module("mySpotifyAppComponents",[ 'mySpotifyAppServices' ])
+
 	.controller("mainAppController", function($rootScope, $scope, spotifyService ) {
 
 		$scope.submit = function() {

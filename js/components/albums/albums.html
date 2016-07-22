@@ -1,0 +1,6 @@
+<fieldset>
+	<legend>Albums</legend>
+	<select ng-class="{data: $root.albums.length}" ng-change="$ctrl.albumSelected()" ng-model="$ctrl.album" class="form-control">
+		<option value="{{ album.id }}" ng-repeat="album in $root.albums">{{ album.name }}</option>
+	</select>
+</fieldset>
