@@ -9,6 +9,7 @@
 
 	<style>
 		fieldset { margin: 0 0 30px; }
+		.data { border:1px solid #4285f4; }
 	</style>
 
 </head>
@@ -16,17 +17,34 @@
 
 	<div class="container">
 
-		<h1>Spotify App</h1>
+		<div class="row">
+			<div class="col-md-6 col-md-offset-3">
 
-		<div ng-include src="'templates/search.html'"></div>
+				<h1>Spotify App</h1>
 
-		<form action="">
+					<form ng-submit="submit()" ng-controller="mainAppController">
 
-		  <div ng-include src="'templates/artists.html'"></div>
-		  <div ng-include src="'templates/albums.html'"></div>
-		  <div ng-include src="'templates/tracks.html'"></div>
+						<fieldset>
+							<legend>Search </legend>
 
-		</form>
+							<div class="input-group">
+					      <input type="text" class="form-control" ng-model="searchValue" placeholder="Search for artists...">
+					      <span class="input-group-btn">
+					        <button class="btn btn-default" type="button">Search!</button>
+					      </span>
+					    </div><!-- /input-group -->
+						</fieldset>
+
+						<div ng-include src="'templates/artists.html'"></div>
+						<div ng-include src="'templates/albums.html'"></div>
+						<div ng-include src="'templates/tracks.html'"></div>
+
+
+					</form>
+
+			</div>
+
+		</div>
 
 	</div>
 
@@ -36,10 +54,8 @@
 	<script src="js/services/index.js"></script>
 	<script src="js/services/spotifyService.js"></script>
 	<script src="js/controllers/index.js"></script>
-	<script src="js/controllers/searchBoxController.js"></script>
 	<script src="js/controllers/artistsController.js"></script>
 	<script src="js/controllers/albumsController.js"></script>
-	<script src="js/controllers/tracksController.js"></script>
 
 </body>
 </html>
