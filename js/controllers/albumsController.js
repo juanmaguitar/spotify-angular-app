@@ -1,14 +1,14 @@
 angular.module("mySpotifyAppControllers")
-	.controller('albumsController', function($rootScope, $scope, spotifyService ) {
+	.controller('albumsController', function($scope, spotifyService ) {
+
+		$scope.$on('albumsAdded', function () {
+			$scope.albums = spotifyService.getAlbums();
+    });
 
 		$scope.$watch("album", function(newValueAlbum, oldValue) {
-
 			if (newValueAlbum) {
-				spotifyService.getTracks( newValueAlbum )
-					.then(function( dataFromApi ) {
-						$scope.$parent.$parent.tracks = dataFromApi.data.items;
-					})
+				spotifyService.searchTracks( newValueAlbum )
 			}
-
 		})
+
 	})

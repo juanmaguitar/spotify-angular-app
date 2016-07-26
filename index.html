@@ -9,7 +9,7 @@
 
 	<style>
 		fieldset { margin: 0 0 30px; }
-		.data { border:1px solid #4285f4; }
+		.data { border:3px solid #4285f4; }
 	</style>
 
 </head>
@@ -22,24 +22,12 @@
 
 				<h1>Spotify App</h1>
 
-					<form ng-submit="submit()" ng-controller="mainAppController">
+					<div ng-include src="'templates/search.html'"></div>
 
-						<fieldset>
-							<legend>Search </legend>
-
-							<div class="input-group">
-					      <input type="text" class="form-control" ng-model="searchValue" placeholder="Search for artists...">
-					      <span class="input-group-btn">
-					        <button class="btn btn-default" type="button">Search!</button>
-					      </span>
-					    </div><!-- /input-group -->
-						</fieldset>
-
+					<form action="">
 						<div ng-include src="'templates/artists.html'"></div>
 						<div ng-include src="'templates/albums.html'"></div>
 						<div ng-include src="'templates/tracks.html'"></div>
-
-
 					</form>
 
 			</div>
@@ -54,8 +42,10 @@
 	<script src="js/services/index.js"></script>
 	<script src="js/services/spotifyService.js"></script>
 	<script src="js/controllers/index.js"></script>
+	<script src="js/controllers/searchController.js"></script>
 	<script src="js/controllers/artistsController.js"></script>
 	<script src="js/controllers/albumsController.js"></script>
+	<script src="js/controllers/tracksController.js"></script>
 
 </body>
 </html>
